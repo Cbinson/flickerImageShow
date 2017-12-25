@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="01t-2X-F2b" customClass="PhotoCell" customModule="fkimage" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="190" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="190" height="250"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4wT-fw-GMX">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="250"/>
+                        <color key="backgroundColor" red="0.76078431369999999" green="0.80392156859999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="4wT-fw-GMX" secondAttribute="bottom" id="3mn-BP-i7f"/>
+                <constraint firstItem="4wT-fw-GMX" firstAttribute="leading" secondItem="01t-2X-F2b" secondAttribute="leading" id="TYc-tj-Dcy"/>
+                <constraint firstAttribute="trailing" secondItem="4wT-fw-GMX" secondAttribute="trailing" id="XAJ-Er-g5i"/>
+                <constraint firstItem="4wT-fw-GMX" firstAttribute="top" secondItem="01t-2X-F2b" secondAttribute="top" id="kCg-5z-Xv2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="TB7-4F-ufF"/>
+            <size key="customSize" width="190" height="250"/>
+            <connections>
+                <outlet property="photoImgV" destination="4wT-fw-GMX" id="cIJ-3X-7Jh"/>
+            </connections>
+            <point key="canvasLocation" x="84" y="-108"/>
+        </collectionViewCell>
+    </objects>
+</document>
