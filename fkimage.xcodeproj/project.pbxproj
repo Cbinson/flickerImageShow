@@ -18,6 +18,7 @@
 		C66644EE1FEBA29400236AB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66644EC1FEBA29400236AB2 /* Main.storyboard */; };
 		C66644F01FEBA29400236AB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66644EF1FEBA29400236AB2 /* Assets.xcassets */; };
 		C66644F31FEBA29400236AB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66644F11FEBA29400236AB2 /* LaunchScreen.storyboard */; };
+		CFF54924203FB5C0001F1501 /* PhotoModel_MVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF54923203FB5C0001F1501 /* PhotoModel_MVVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C66644EF1FEBA29400236AB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C66644F21FEBA29400236AB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C66644F41FEBA29400236AB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF54923203FB5C0001F1501 /* PhotoModel_MVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel_MVVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				C61423FC1FECA64E0012A5BB /* PhotoListModel.swift */,
 				C61424001FECAE510012A5BB /* PhotosModel.swift */,
 				C61423FE1FECAB080012A5BB /* PhotoModel.swift */,
+				CFF54923203FB5C0001F1501 /* PhotoModel_MVVM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				C61424011FECAE510012A5BB /* PhotosModel.swift in Sources */,
 				C66644E91FEBA29400236AB2 /* AppDelegate.swift in Sources */,
 				C61423FF1FECAB080012A5BB /* PhotoModel.swift in Sources */,
+				CFF54924203FB5C0001F1501 /* PhotoModel_MVVM.swift in Sources */,
 				C61424041FECB92D0012A5BB /* PhotoCell.swift in Sources */,
 				C61423FD1FECA64E0012A5BB /* PhotoListModel.swift in Sources */,
 			);
