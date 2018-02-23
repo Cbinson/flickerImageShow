@@ -12,7 +12,7 @@ import SDWebImage
 
 let key = "6c33e207751d51ccca4116b40d8b32be"
 let privateKey = "86fb7c8eb3b4c13b"
-let keyWord = "cat"
+let keyWord = "lebronjames"
 
 
 class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -30,12 +30,13 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        print("[VC] didload")
         self.registerCustomCell()
         
         let url = URL(string: searchApi)
         
         self.searchImageAPI(url: url!)
+        
     }
     
     private func registerCustomCell() {
@@ -46,6 +47,7 @@ class ViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICo
 //        let para:Parameters = ["method":"flickr.photos.search","api_key":key, "text":keyWord]
         
         Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default).responseString { [unowned self](response) in
+            
             //頭尾字串要去除,才能正常進行字串轉dictionary
             var result:String? = response.result.value
             result = result?.replacingOccurrences(of: "jsonFlickrApi(", with: "")
@@ -76,6 +78,8 @@ extension UICollectionViewDelegate {
     
 }
 
+
+/// cellection datasource
 extension ViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var itemNums = 0
@@ -95,8 +99,23 @@ extension ViewController {
         //exam:https://farm5.staticflickr.com/4725/27414478659_68e8ae855b.jpg
         let imageUrlStr = String(format: "https://farm%d.staticflickr.com/%@/%@_%@.jpg", photo.farm!, photo.server!, photo.id!, photo.secret!)
         
-        cell.photoImgV.sd_setImage(with: URL(string: imageUrlStr), completed: nil)
         
+        let sd_manager = SDWebImageManager.shared()
+        sd_manager.imageDownloader?.downloadTimeout = 5
+        sd_manager.loadImage(with: URL(string: imageUrlStr), options: SDWebImageOptions.lowPriority, progress: { (receivedSize, expectedSize, targetURL) in
+            //process tracking
+            //set noimage image
+            DispatchQueue.main.async {
+                cell.photoImgV.image = UIImage(named: "if_18.Pictures-Day_290132")
+                cell.title.text = ""
+            }
+        }) { (image, data, error, cacheType, finished, imageURL) in
+            //download done
+            if image != nil {
+                cell.photoImgV.image = image
+                cell.title.text = photo.title!
+            }
+        }
         
         return cell
     }
@@ -104,6 +123,9 @@ extension ViewController {
     
 }
 
+
+
+/// cellection delegate
 extension ViewController {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.size.width / 2 - 1

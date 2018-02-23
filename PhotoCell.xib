@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,18 +24,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="190" height="250"/>
                         <color key="backgroundColor" red="0.76078431369999999" green="0.80392156859999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsm-P3-xU6">
+                        <rect key="frame" x="0.0" y="205" width="190" height="45"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="xsm-P3-xU6" secondAttribute="height" multiplier="38:9" id="hfP-ZM-XZr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="4wT-fw-GMX" secondAttribute="bottom" id="3mn-BP-i7f"/>
+                <constraint firstAttribute="bottom" secondItem="xsm-P3-xU6" secondAttribute="bottom" id="7VR-Dg-n2r"/>
                 <constraint firstItem="4wT-fw-GMX" firstAttribute="leading" secondItem="01t-2X-F2b" secondAttribute="leading" id="TYc-tj-Dcy"/>
                 <constraint firstAttribute="trailing" secondItem="4wT-fw-GMX" secondAttribute="trailing" id="XAJ-Er-g5i"/>
+                <constraint firstItem="xsm-P3-xU6" firstAttribute="leading" secondItem="01t-2X-F2b" secondAttribute="leading" id="dZd-5f-5YA"/>
                 <constraint firstItem="4wT-fw-GMX" firstAttribute="top" secondItem="01t-2X-F2b" secondAttribute="top" id="kCg-5z-Xv2"/>
+                <constraint firstAttribute="trailing" secondItem="xsm-P3-xU6" secondAttribute="trailing" id="tMI-xy-h3M"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="TB7-4F-ufF"/>
             <size key="customSize" width="190" height="250"/>
             <connections>
                 <outlet property="photoImgV" destination="4wT-fw-GMX" id="cIJ-3X-7Jh"/>
+                <outlet property="title" destination="xsm-P3-xU6" id="kXo-s1-ens"/>
             </connections>
             <point key="canvasLocation" x="84" y="-108"/>
         </collectionViewCell>
