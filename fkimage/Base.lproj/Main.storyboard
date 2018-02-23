@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Tpm-iB-cSy">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UhR-HA-RxR">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,15 +39,18 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Tpm-iB-cSy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6He-FD-kHz"/>
                             <constraint firstItem="UhR-HA-RxR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AbA-XW-NL4"/>
                             <constraint firstItem="UhR-HA-RxR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H4F-T7-cKB"/>
                             <constraint firstItem="UhR-HA-RxR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KWh-rx-icG"/>
                             <constraint firstItem="UhR-HA-RxR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ekh-Ow-e0a"/>
+                            <constraint firstItem="Tpm-iB-cSy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o0Z-06-VL8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="CPb-se-rhx"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Tpm-iB-cSy" id="qct-fY-mUv"/>
                         <outlet property="mainCollectionView" destination="UhR-HA-RxR" id="V8a-gf-TgP"/>
                     </connections>
                 </viewController>
